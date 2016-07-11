@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'software_tracker_app',
+    'software_tracker',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -133,7 +133,7 @@ LOGGING = {
         },
     },
     'loggers': {
-        'software_tracker_app': {
+        'software_tracker': {
             'handlers': ['logfile'],
             'level': os.environ.get(u'SFTWR__LOG_LEVEL'),
         },

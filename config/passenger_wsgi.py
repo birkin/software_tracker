@@ -12,7 +12,7 @@ Prepares application environment.
 Variables assume project setup like:
 stuff
     django_template_project
-        software_tracker_app
+        software_tracker
         config
     env_sftwr
 """
