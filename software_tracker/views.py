@@ -47,8 +47,8 @@ def apps2( request ):
               output = u'%s(%s)' % ( callback, output )
         return HttpResponse( output, content_type = u'application/javascript; charset=utf-8' )
     else:
-        data_dict[u'LOGIN_URL'] = settings_app.LOGIN_URL
-        return render( request, u'software_app_templates/base2.html', data_dict )
+        # data_dict[u'LOGIN_URL'] = settings_app.LOGIN_URL
+        return render( request, u'software_tracker_templates/base2.html', data_dict )
 
 # def apps2( request ):
 #     """Preps data; returns main display page or json."""  # TODO: a) delete base.html; b) cache
