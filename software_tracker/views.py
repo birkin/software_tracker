@@ -14,13 +14,14 @@ log = logging.getLogger(__name__)
 
 def hi( request ):
     """ Returns simplest response. """
+    log.debug( 'starting hi()' )
     now = datetime.datetime.now()
     return HttpResponse( '<p>hi</p> <p>( %s )</p>' % now )
 
 
 def apps2( request ):
     """Preps data; returns main display page or json."""  # TODO: a) delete base.html; b) cache
-    return HttpResponse( 'coming' )
+    # return HttpResponse( 'coming' )
     ## prep data
     url_scheme, url_server = request.META[u'wsgi.url_scheme'], request.META[u'SERVER_NAME']
     api_list, production_list, current_development_list = [], [], []

@@ -112,7 +112,10 @@ class Software(models.Model):
     ## 'composed of' attribute (not in __dict__)
     composed_of_list = []
     composed_of_queryset = self.composed_of.values()
-    assert type(composed_of_queryset) == django.db.models.query.ValuesQuerySet  # not serializable
+    log.debug( 'composed_of_queryset, `{}`'.format(composed_of_queryset) )
+    log.debug( 'type(composed_of_queryset), `{}`'.format(type(composed_of_queryset)) )
+    # assert type(composed_of_queryset) == django.db.models.query.ValuesQuerySet  # not serializable (original code)
+    assert type(composed_of_queryset) == django.db.models.query.QuerySet  # updated due to error on above
     for dict_entry in composed_of_queryset:
       sub_dict = { u'name': dict_entry[u'name'] }
       sub_dict[u'url_software_page'] = u'%s://%s%s#%s' % ( url_scheme, url_server, reverse(u'apps_url',), dict_entry[u'slug'] )
