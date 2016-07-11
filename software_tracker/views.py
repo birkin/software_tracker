@@ -40,7 +40,12 @@ def apps2( request ):
     format = request.GET.get( u'format', None )
     callback = request.GET.get( u'callback', None )
     if format == u'json':
-        d = { u'datetime': u'%s' % datetime.datetime.now(), u'message': u'format=json called', u'remote_ip': u'%s' % request.META[u'REMOTE_ADDR'] }
+        d = {
+            u'datetime': u'%s' % datetime.datetime.now(),
+            u'message': u'format=json called',
+            u'remote_ip': u'%s' % request.META[u'REMOTE_ADDR'],
+            # 'login_url': reverse('admin:usep_app_flatcollection_changelist' ),
+            }
         log.info( json.dumps(d, sort_keys=True) )
         output = json.dumps( data_dict, sort_keys=True, indent=2 )
         if callback:
@@ -48,6 +53,11 @@ def apps2( request ):
         return HttpResponse( output, content_type = u'application/javascript; charset=utf-8' )
     else:
         # data_dict[u'LOGIN_URL'] = settings_app.LOGIN_URL
+        admin_url = reverse('admin:software_tracker_software_changelist')
+        log.debug( 'admin url, `{}`'.format(admin_url) )
+        log.debug( 'type(admin_url, `{}`'.format(type(admin_url)) )
+        data_dict['login_url'] = admin_url
+        log.debug( 'data_dct, ```{}```'.format(pprint.pformat(data_dict)) )
         return render( request, u'software_tracker_templates/base2.html', data_dict )
 
 # def apps2( request ):
