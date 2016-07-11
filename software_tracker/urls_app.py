@@ -7,7 +7,9 @@ from django.views.generic import RedirectView
 
 urlpatterns = patterns('',
 
-    url( r'^info/$',  'software_tracker_app.views.hi', name='info_url' ),
+    url( r'^info/$',  'software_tracker.views.hi', name='info_url' ),
+
+    url( r'^apps/$', 'software_tracker.views.apps2', name='apps_url' ),
 
     url( r'^$',  RedirectView.as_view(pattern_name='info_url') ),
 
