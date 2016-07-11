@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'software_tracker',
+    'markdown_deux',
 )
 
 MIDDLEWARE_CLASSES = (
