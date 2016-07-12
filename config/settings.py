@@ -2,7 +2,7 @@
 
 from __future__ import unicode_literals
 """
-Django settings for django_template_project.
+Django settings for software_tracker_project.
 
 Environmental variables triggered in project's env_sftwr/bin/activate, when using runserver,
   or env_sftwr/bin/activate_this.py, when using apache via passenger.
