@@ -1,5 +1,5 @@
 """
-WSGI config for django_template_project.
+WSGI config for software_tracker_project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
 Prepares application environment.
 Variables assume project setup like:
 stuff
-    django_template_project
+    software_tracker_project
         software_tracker
         config
     env_sftwr
