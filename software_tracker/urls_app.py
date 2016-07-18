@@ -11,6 +11,6 @@ urlpatterns = patterns('',
 
     url( r'^apps/$', 'software_tracker.views.apps2', name='apps_url' ),
 
-    url( r'^$',  RedirectView.as_view(pattern_name='info_url') ),
+    url( r'^$',  RedirectView.as_view(pattern_name='apps_url') ),
 
     )
