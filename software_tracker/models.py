@@ -3,29 +3,13 @@
 from __future__ import unicode_literals
 import datetime, json, logging, os, pprint
 from django.conf import settings as project_settings
-from django.core.urlresolvers import reverse
+# from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.http import HttpResponseRedirect
 from django.utils.encoding import smart_unicode
 
 log = logging.getLogger(__name__)
-
-
-
-
-
-
-
-
-
-# # -*- coding: utf-8 -*-
-
-# import json, logging
-# from django.core.urlresolvers import reverse
-# from django.db import models
-# from django.utils.encoding import smart_unicode
-
-# log = logging.getLogger(__name__)
 
 
 ### db models ###
